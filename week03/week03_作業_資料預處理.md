@@ -5,13 +5,60 @@
 | 項目 | 說明 |
 |------|------|
 | 對應教科書 | Ch3 資料預處理 |
-| 繳交方式 | 在 Fork 的 week03/ 資料夾中建立三個檔案，發 PR 繳交 |
+| 繳交方式 | 在 Fork 的 week03/ 資料夾中建立四個檔案，發 PR 繳交 |
 | 繳交期限 | 下週上課前 |
 | PR 標題格式 | 學號_姓名_week03 |
 
 ---
 
-## 第 1 題：數值型資料預處理與 Pipeline 實作（40 分）
+## 第 1 題：Fork + PR 繳交測試（10 分）
+
+### 任務說明
+
+本題的目的是確認你能順利完成 Fork → 建立檔案 → Commit → Push → 發 PR 的完整流程。只要成功發出 PR 且檔案內容正確，就能拿到滿分。
+
+### 操作步驟
+
+1. 確認你已經 Fork 老師的 Repo 到自己的 GitHub 帳號
+2. 在你的 Fork 中建立 `week03/` 資料夾
+3. 在 `week03/` 中建立 `q1_hello.txt`
+4. 填入以下內容後 Commit 並 Push
+5. 到 GitHub 網頁發 Pull Request 回老師的 Repo
+
+### 作答內容
+
+請建立 `week03/q1_hello.txt`，依照以下格式填寫：
+
+```
+姓名：
+學號：
+系級：
+
+=== 完成確認 ===
+我已成功完成以下步驟：
+1. Fork 老師的 Repo：（是/否）
+2. 建立 week03 資料夾：（是/否）
+3. 建立本檔案 q1_hello.txt：（是/否）
+4. Commit 並 Push 到自己的 Fork：（是/否）
+5. 發出 Pull Request：（是/否）
+
+=== 使用的 Git 操作方式 ===
+（請填寫你使用的方式：GitHub 網頁 / VS Code / 終端機指令）
+
+=== 遇到的問題 ===
+（如果操作過程中有遇到任何問題，請簡單描述。沒有的話填「無」）
+```
+
+### 評分標準
+
+| 項目 | 配分 |
+|------|------|
+| 檔案存在且姓名學號已填寫 | 5 分 |
+| PR 成功發出，標題格式正確 | 5 分 |
+
+---
+
+## 第 2 題：數值型資料預處理與 Pipeline 實作（30 分）
 
 ### 任務說明
 
@@ -61,7 +108,7 @@ print(f"\n各欄位遺漏值數量：\n{df.isnull().sum()}")
 
 ### 作答內容
 
-請建立 `week03/q1_preprocessing.txt`，依照以下格式填寫：
+請建立 `week03/q2_preprocessing.txt`，依照以下格式填寫：
 
 ```
 姓名：
@@ -101,14 +148,14 @@ result = num_pipeline.fit_transform(df)
 
 | 項目 | 配分 |
 |------|------|
-| SimpleImputer 正確填補遺漏值 | 10 分 |
-| StandardScaler 正確標準化 | 10 分 |
-| Pipeline 串接正確且可執行 | 10 分 |
-| 輸出結果完整，標準化驗證正確 | 10 分 |
+| SimpleImputer 正確填補遺漏值 | 8 分 |
+| StandardScaler 正確標準化 | 7 分 |
+| Pipeline 串接正確且可執行 | 8 分 |
+| 輸出結果完整，標準化驗證正確 | 7 分 |
 
 ---
 
-## 第 2 題：ColumnTransformer 整合數值與類別管道（40 分）
+## 第 3 題：ColumnTransformer 整合數值與類別管道（40 分）
 
 ### 任務說明
 
@@ -151,7 +198,7 @@ print(f"\n各欄位遺漏值：\n{df.isnull().sum()}")
 
 ### 作答內容
 
-請建立 `week03/q2_column_transformer.txt`，依照以下格式填寫：
+請建立 `week03/q3_column_transformer.txt`，依照以下格式填寫：
 
 ```
 姓名：
@@ -214,11 +261,11 @@ X_transformed = preprocessor.fit_transform(X)
 
 ---
 
-## 第 3 題：資料預處理觀念題（20 分）
+## 第 4 題：資料預處理觀念題（20 分）
 
 ### 作答內容
 
-請建立 `week03/q3_concept.txt`，回答以下問題：
+請建立 `week03/q4_concept.txt`，回答以下問題：
 
 ```
 姓名：
@@ -250,13 +297,17 @@ A3：???
 
 ## 繳交 Checklist
 
-- [ ] week03/q1_preprocessing.txt 包含完整程式碼與 Pipeline 處理結果
-- [ ] week03/q2_column_transformer.txt 包含完整程式碼與 ColumnTransformer 輸出結果
-- [ ] week03/q3_concept.txt 包含三題觀念回答
+- [ ] week03/q1_hello.txt 包含姓名學號與完成確認
+- [ ] week03/q2_preprocessing.txt 包含完整程式碼與 Pipeline 處理結果
+- [ ] week03/q3_column_transformer.txt 包含完整程式碼與 ColumnTransformer 輸出結果
+- [ ] week03/q4_concept.txt 包含三題觀念回答
 - [ ] 已 push 到自己的 Fork
 - [ ] 已發 PR，標題格式：學號_姓名_week03
 
 ## 常見問題
+
+**Q：第 1 題只要建立檔案就好嗎？**
+是的，第 1 題的目的是確認你能跑通 Fork → Push → PR 的流程。填好姓名學號、完成確認，成功發出 PR 就能拿到 10 分。
 
 **Q：SimpleImputer 的 strategy='mean' 只能用在數值型資料嗎？**
 是的，mean 和 median 只能用在數值型欄位。類別型欄位請使用 most_frequent，它會用出現次數最多的值來填補。
